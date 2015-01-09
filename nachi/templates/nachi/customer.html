@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+	<div class="col-md-6">
+		<div class="btn-group" role="group">
+		  {% for menu in menus %}
+		  	<button type="button" class="btn btn-default
+		  	{% ifequal menu_type menu %} active {% endifequal %}" id="{{menu.name}}">{{ menu.name }}</button>
+		  {% endfor %}
+	  	</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-6">
+		<form action="/place_order/" method="post">
+		{% csrf_token %}
+		<div class="checkbox" id="entrees">
+			{% for entree in entrees %}
+				<div class="row">
+					<label><input type="checkbox" name="entrees" value="{{ entree.name }}"><img src="{{ entree.image_url }}" alt="img_url" class="img-rounded" style="height: 100px; width: 100px;"> {{ entree.name }} - ${{ entree.price }}</label>
+				</div>
+			{% endfor %}
+		</div>
+		<div class="form-group"><label for="tableNumber">Table Number: </label><input type="text" name="table_number"></div>
+		<button type="submit" class="btn btn-default">Place Order</button>
+	</div>
+</div>
+{% endblock %}

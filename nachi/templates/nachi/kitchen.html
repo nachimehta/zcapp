@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+	{% for order in orders %}
+		<div class="row">
+			<button type="button" class="btn btn-default btn-lg">
+  				<span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Complete
+			</button>
+			<span id={{ order.id }}>{{ order }} has placed the following order: {% for entree in order.entrees.all %} {{ entree.name }} {% endfor %}</span>
+		</div>
+	{% endfor %}
+
+
+{% endblock %}
