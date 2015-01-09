@@ -13,4 +13,21 @@ $(document).ready(function() {
 		})
 
 	});
+
+	$('.menu').click(function() {
+		var menu = $(this).attr('id');
+		$(this).addClass('active');
+		$(this).siblings().removeClass('active');
+
+		$.ajax({
+			type: "POST",
+			url: "/change_menu/",
+			data: {menu_type: menu},
+			dataType: "json",
+			success: function(data){
+				//change menu items
+			}
+		})
+
+	});
 });

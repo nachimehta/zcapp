@@ -24,8 +24,8 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="/customer">Order Food {% if customer %}<span class="sr-only">(current)</span>{% endif %}</a></li>
-                <li><a href="/kitchen">Prepare Food {% if kitchen %}<span class="sr-only">(current)</span>{% endif %}</a></li>
+                <li {% if customer %}class="active"{% endif %}><a href="/customer">Order Food {% if customer %}<span class="sr-only">(current)</span>{% endif %}</a></li>
+                <li {% if kitchen %}class="active"{% endif %}><a href="/kitchen">Prepare Food {% if kitchen %}<span class="sr-only">(current)</span>{% endif %}</a></li>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
         </nav>

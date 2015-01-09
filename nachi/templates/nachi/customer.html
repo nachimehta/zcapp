@@ -5,8 +5,8 @@
 	<div class="col-md-6">
 		<div class="btn-group" role="group">
 		  {% for menu in menus %}
-		  	<button type="button" class="btn btn-default
-		  	{% ifequal menu_type menu %} active {% endifequal %}" id="{{menu.name}}">{{ menu.name }}</button>
+		  	<button type="button" class="btn btn-default menu
+		  	{% ifequal menu_type menu.name %} active {% endifequal %}" id="{{menu.name}}">{{ menu.name }}</button>
 		  {% endfor %}
 	  	</div>
 	</div>
