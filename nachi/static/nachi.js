@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	$('button').click(function() {
+	$('.kitchen').click(function() {
 		console.log($(this).siblings());
 		var id = $(this).siblings().attr('id');
 		$(this).siblings().remove();
